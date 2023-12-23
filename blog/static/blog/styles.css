@@ -1,0 +1,19 @@
+body {
+  padding-top: 70px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.card {
+  margin: 0% 1%;
+}

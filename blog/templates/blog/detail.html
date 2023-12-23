@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %} {% block content %}
+<div
+  class="card"
+  style="
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div class="card-body">
+    <img src="{{ post.image_body.url }}" class="card-img-top" alt="..." />
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.date_posted}}</p>
+    <p class="card-text">
+      <small class="text-body-secondary">{{ post.body_blog }}</small>
+    </p>
+    <a href="{% url 'home' %}" class="card-link">Go back</a>
+  </div>
+  <div class="container" style="text-align: center">
+    <span><strong>Comments</strong></span>
+  </div>
+  {% for comment in post.comments.all %}
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <p class="card-text">{{ comment.body }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  <br />
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %} {{ form }} <br />
+        <br />
+        <button type="submit" class="btn btn-info">submit</button>
+      </form>
+    </div>
+  </div>
+  <br /><br />
+</div>
+<br /><br />
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
+<div class="card" style="width: 20rem">
+  <img src="{{ post.intro_image.url }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.introduction}}</p>
+    <p class="card-text">
+      <small class="text-body-secondary">{{ post.date_posted }}</small>
+    </p>
+
+    <a href="{% url 'detail' slug=post.slug %}" class="card-link">read more</a>
+  </div>
+</div>
+<br />
+{% endfor %} {% endblock %}

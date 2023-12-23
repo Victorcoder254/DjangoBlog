@@ -1,0 +1,4 @@
+.env
+/VENV
+media
+__pycache__

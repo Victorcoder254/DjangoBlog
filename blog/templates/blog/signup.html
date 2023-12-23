@@ -1,0 +1,71 @@
+{% extends 'blog/base.html' %} {% block content %}
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <span
+      ><strong><h3 style="text-align: center">Sign-up</h3></strong></span
+    >
+    <form method="POST">
+      {% csrf_token %}
+      <div class="input-group">
+        <span class="input-group-text">firstname</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="fname"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">lastname</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="lname"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">username</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="uname"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">email</span>
+        <input
+          type="email"
+          aria-label="First name"
+          class="form-control"
+          name="email"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">password</span>
+        <input
+          type="password"
+          aria-label="First name"
+          class="form-control"
+          name="pass"
+        />
+      </div>
+      <br />
+
+      <input class="btn btn-primary" type="submit" value="Submit" /><br />
+      <span
+        ><small
+          >Login here if already registered
+          <a href="{% url 'login' %}">log-in</a></small
+        ></span
+      >
+    </form>
+  </div>
+</div>
+<br /><br />
+{% endblock %}

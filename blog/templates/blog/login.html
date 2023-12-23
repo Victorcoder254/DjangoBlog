@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %} {% block content %}
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <span
+      ><strong><h3 style="text-align: center">Log-in</h3></strong></span
+    >
+    <form method="POST">
+      {% csrf_token %}
+      <div class="input-group">
+        <span class="input-group-text">username</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="uname"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">password</span>
+        <input
+          type="password"
+          aria-label="First name"
+          class="form-control"
+          name="pass"
+        />
+      </div>
+      <br />
+
+      <input class="btn btn-primary" type="submit" value="Submit" /><br />
+      <span
+        ><small
+          >Sign-up here if not registered
+          <a href="{% url 'signup' %}">sign-up</a></small
+        ></span
+      >
+    </form>
+  </div>
+</div>
+<br /><br />
+{% endblock %}
